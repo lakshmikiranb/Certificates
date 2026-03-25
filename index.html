@@ -1,206 +1,120 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Certification | Lakshmi Kiran</title>
-    <style>
-        :root {
-            --primary-navy: #1a2a44;
-            --accent-gold: #b8860b;
-            --border-light: #e0e0e0;
-            --bg-canvas: #f9f9f9;
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lakshmi Kiran | Certifications</title>
 
-        body {
-            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-            background-color: var(--bg-canvas);
-            margin: 0;
-            padding: 40px 20px;
-            display: flex;
-            justify-content: center;
-        }
+<style>
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background: #f4f6f8;
+}
 
-        .cert-wrapper {
-            background: #ffffff;
-            width: 100%;
-            max-width: 900px;
-            padding: 60px;
-            border: 1px solid var(--border-light);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
-            position: relative;
-        }
+/* Header */
+.header {
+    background: #0a66c2;
+    color: white;
+    padding: 25px;
+    text-align: center;
+}
 
-        /* Top Corner Accent */
-        .corner-accent {
-            position: absolute;
-            top: 0;
-            right: 0;
-            width: 0;
-            height: 0;
-            border-style: solid;
-            border-width: 0 100px 100px 0;
-            border-color: transparent var(--primary-navy) transparent transparent;
-        }
+/* Container */
+.container {
+    max-width: 900px;
+    margin: 30px auto;
+    padding: 20px;
+}
 
-        header {
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-start;
-            margin-bottom: 50px;
-        }
+/* Card */
+.card {
+    background: white;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    text-align: center;
+}
 
-        .cert-id {
-            font-family: monospace;
-            font-weight: bold;
-            color: #555;
-        }
+/* Button */
+.btn {
+    padding: 10px 20px;
+    background: #0a66c2;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    margin-top: 15px;
+}
 
-        .brand-logo {
-            text-align: right;
-        }
+/* Hidden sections */
+.section {
+    display: none;
+}
 
-        .brand-logo h2 {
-            margin: 0;
-            color: var(--primary-navy);
-            font-size: 28px;
-            letter-spacing: 1px;
-        }
+.active {
+    display: block;
+}
 
-        .brand-logo p {
-            margin: 0;
-            font-size: 12px;
-            color: #777;
-            font-style: italic;
-        }
-
-        .cert-title {
-            text-align: center;
-            margin-bottom: 40px;
-        }
-
-        .cert-title h1 {
-            font-size: 42px;
-            color: #333;
-            margin: 0;
-            border-bottom: 3px solid #333;
-            display: inline-block;
-            padding-bottom: 10px;
-        }
-
-        .cert-body {
-            text-align: center;
-            line-height: 2;
-            font-size: 20px;
-            color: #444;
-        }
-
-        .recipient-name {
-            display: block;
-            font-size: 32px;
-            font-weight: 800;
-            color: var(--primary-navy);
-            margin: 20px 0;
-            text-transform: uppercase;
-        }
-
-        .course-title {
-            font-weight: bold;
-            color: #000;
-        }
-
-        .footer-sigs {
-            margin-top: 80px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 0 20px;
-        }
-
-        .sig-container {
-            text-align: center;
-            width: 250px;
-        }
-
-        .sig-line {
-            border-top: 2px solid #333;
-            padding-top: 10px;
-            margin-top: 10px;
-        }
-
-        .sig-name {
-            font-weight: bold;
-            display: block;
-        }
-
-        .sig-role {
-            font-size: 14px;
-            color: #666;
-        }
-
-        .seal {
-            width: 110px;
-            height: 110px;
-            border: 2px solid var(--accent-gold);
-            border-radius: 50%;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            font-size: 10px;
-            font-weight: bold;
-            color: var(--accent-gold);
-            padding: 5px;
-            text-align: center;
-        }
-    </style>
+iframe {
+    width: 100%;
+    height: 500px;
+    border: none;
+    margin-top: 20px;
+    border-radius: 8px;
+}
+</style>
 </head>
+
 <body>
 
-    <div class="cert-wrapper">
-        <div class="corner-accent"></div>
-        
-        <header>
-            <div class="cert-id">NT_B33DAEE243</div>
-            <div class="brand-logo">
-                <h2>NoviTech</h2>
-                <p>the innovation partner</p>
-            </div>
-        </header>
+<div class="header">
+    <h1>Lakshmi Kiran</h1>
+    <p>IT Support Engineer | Certifications</p>
+</div>
 
-        <section class="cert-title">
-            <h1>Certificate of Completion</h1>
-        </section>
+<!-- MAIN PAGE -->
+<div id="home" class="container section active">
 
-        <section class="cert-body">
-            This is to certify that
-            <span class="recipient-name">Lakshmi Kiran</span>
-            has successfully completed the <span class="course-title">30 Days MasterClass in Data Analytics</span>
-            <br>from
-            <strong>November 27th to December 27th 2025</strong>
-            <br>conducted by <strong>NoviTech R&D Private Limited</strong>.
-        </section>
+    <div class="card">
+        <h2>Data Analytics MasterClass</h2>
+        <p>Issued by NoviTech R&D Private Limited</p>
+        <p>Credential ID: NT_B33DAEE243</p>
 
-        <footer class="footer-sigs">
-            <div class="sig-container">
-                <div class="sig-line">
-                    <span class="sig-name">Mr. T. Muthuvel Ramesh</span>
-                    <span class="sig-role">AI Developer<br>Novitech R&D Pvt. Ltd.</span>
-                </div>
-            </div>
-
-            <div class="seal">
-                CERTIFIED<br>ISO<br>9001:2015
-            </div>
-
-            <div class="sig-container">
-                <div class="sig-line">
-                    <span class="sig-name">Mr. A. Vinothkumar</span>
-                    <span class="sig-role">Director<br>Novitech R&D Pvt. Ltd.</span>
-                </div>
-            </div>
-        </footer>
+        <button class="btn" onclick="showPage('novitech')">
+            View Certificate
+        </button>
     </div>
+
+</div>
+
+<!-- NOVITECH PAGE -->
+<div id="novitech" class="container section">
+
+    <div class="card">
+        <h2>Certificate Verification</h2>
+        <p><strong>Candidate:</strong> Lakshmi Kiran</p>
+        <p><strong>Organization:</strong> NoviTech R&D Private Limited</p>
+        <p><strong>Duration:</strong> 30 Days (Nov 27 – Dec 27, 2025)</p>
+        <p><strong>Credential ID:</strong> NT_B33DAEE243</p>
+
+        <iframe src="https://drive.google.com/file/d/1YrQ-r6Tn84b5AqzxfMehlXxFYJBsdK22/preview"></iframe>
+
+        <button class="btn" onclick="showPage('home')">
+            ← Back
+        </button>
+    </div>
+
+</div>
+
+<script>
+function showPage(page) {
+    document.getElementById("home").classList.remove("active");
+    document.getElementById("novitech").classList.remove("active");
+
+    document.getElementById(page).classList.add("active");
+}
+</script>
 
 </body>
 </html>
