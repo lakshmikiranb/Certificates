@@ -1,121 +1,120 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lakshmi Kiran | Certifications</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lakshmi Kiran | Certifications</title>
 
-    <style>
-        body {
-            margin: 0;
-            font-family: 'Segoe UI', Tahoma, sans-serif;
-            background: #f3f6f8;
-            color: #333;
-        }
+<style>
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background: #f4f6f8;
+}
 
-        .header {
-            background: #0a66c2;
-            color: white;
-            padding: 30px 20px;
-            text-align: center;
-        }
+/* Header */
+.header {
+    background: #0a66c2;
+    color: white;
+    padding: 25px;
+    text-align: center;
+}
 
-        .header h1 {
-            margin: 0;
-            font-size: 28px;
-        }
+/* Container */
+.container {
+    max-width: 900px;
+    margin: 30px auto;
+    padding: 20px;
+}
 
-        .header p {
-            margin-top: 8px;
-            font-size: 14px;
-            opacity: 0.9;
-        }
+/* Card */
+.card {
+    background: white;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    text-align: center;
+}
 
-        .container {
-            max-width: 800px;
-            margin: 40px auto;
-            padding: 20px;
-        }
+/* Button */
+.btn {
+    padding: 10px 20px;
+    background: #0a66c2;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    margin-top: 15px;
+}
 
-        .card {
-            background: white;
-            border-radius: 12px;
-            padding: 25px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-            transition: 0.3s;
-        }
+/* Hidden sections */
+.section {
+    display: none;
+}
 
-        .card:hover {
-            transform: translateY(-5px);
-        }
+.active {
+    display: block;
+}
 
-        .title {
-            font-size: 22px;
-            font-weight: bold;
-            margin-bottom: 10px;
-        }
-
-        .org {
-            color: #555;
-            margin-bottom: 8px;
-        }
-
-        .details {
-            font-size: 14px;
-            margin-bottom: 20px;
-            color: #666;
-        }
-
-        .btn {
-            display: inline-block;
-            padding: 12px 20px;
-            background: #0a66c2;
-            color: white;
-            text-decoration: none;
-            border-radius: 6px;
-            font-weight: 500;
-        }
-
-        .btn:hover {
-            background: #004182;
-        }
-
-        .footer {
-            text-align: center;
-            font-size: 13px;
-            margin-top: 40px;
-            color: #777;
-        }
-    </style>
+iframe {
+    width: 100%;
+    height: 500px;
+    border: none;
+    margin-top: 20px;
+    border-radius: 8px;
+}
+</style>
 </head>
 
 <body>
 
 <div class="header">
     <h1>Lakshmi Kiran</h1>
-    <p>IT Support Engineer | Certifications Portfolio</p>
+    <p>IT Support Engineer | Certifications</p>
 </div>
 
-<div class="container">
+<!-- MAIN PAGE -->
+<div id="home" class="container section active">
 
     <div class="card">
-        <div class="title">Data Analytics MasterClass</div>
-        <div class="org">NoviTech R&D Private Limited</div>
-        <div class="details">
-            Duration: 30 Days (Nov 27 – Dec 27, 2025)<br>
-            Credential ID: NT_B33DAEE243
-        </div>
+        <h2>Data Analytics MasterClass</h2>
+        <p>Issued by NoviTech R&D Private Limited</p>
+        <p>Credential ID: NT_B33DAEE243</p>
 
-        <a class="btn" href="https://drive.google.com/file/d/1YrQ-r6Tn84b5AqzxfMehlXxFYJBsdK22/view?usp=drivesdk" target="_blank">
+        <button class="btn" onclick="showPage('novitech')">
             View Certificate
-        </a>
+        </button>
     </div>
 
 </div>
 
-<div class="footer">
-    © 2026 Lakshmi Kiran | Professional Certification Profile
+<!-- NOVITECH PAGE -->
+<div id="novitech" class="container section">
+
+    <div class="card">
+        <h2>Certificate Verification</h2>
+        <p><strong>Candidate:</strong> Lakshmi Kiran</p>
+        <p><strong>Organization:</strong> NoviTech R&D Private Limited</p>
+        <p><strong>Duration:</strong> 30 Days (Nov 27 – Dec 27, 2025)</p>
+        <p><strong>Credential ID:</strong> NT_B33DAEE243</p>
+
+        <iframe src="https://drive.google.com/file/d/1YrQ-r6Tn84b5AqzxfMehlXxFYJBsdK22/preview"></iframe>
+
+        <button class="btn" onclick="showPage('home')">
+            ← Back
+        </button>
+    </div>
+
 </div>
+
+<script>
+function showPage(page) {
+    document.getElementById("home").classList.remove("active");
+    document.getElementById("novitech").classList.remove("active");
+
+    document.getElementById(page).classList.add("active");
+}
+</script>
 
 </body>
 </html>
