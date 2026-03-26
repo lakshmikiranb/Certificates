@@ -3,120 +3,117 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Certificate Verification</title>
-
-<script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js"></script>
-<script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js"></script>
+<title>Certificate Details</title>
 
 <style>
 body {
-    font-family: Arial;
-    background: #f4f6f9;
     margin: 0;
+    font-family: Arial, sans-serif;
+    background: #f4f6f9;
 }
 
+/* HEADER */
 .header {
     background: #0b3c49;
     color: white;
-    padding: 15px;
-    text-align: center;
-}
-
-.container {
-    max-width: 900px;
-    margin: 30px auto;
-}
-
-.box {
-    background: white;
     padding: 20px;
+    text-align: center;
+    font-size: 22px;
+    font-weight: bold;
+}
+
+/* CONTAINER */
+.container {
+    max-width: 1000px;
+    margin: 30px auto;
+    padding: 20px;
+}
+
+/* CARD */
+.card {
+    background: white;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+/* TITLE */
+.title {
+    font-size: 20px;
+    margin-bottom: 15px;
+}
+
+/* CERT FRAME */
+.cert-frame {
+    border: 5px solid #1e5aa5;
     border-radius: 10px;
-}
-
-input {
-    padding: 10px;
-    width: 250px;
-}
-
-button {
-    padding: 10px;
-    background: #1e5aa5;
-    color: white;
-    border: none;
+    overflow: hidden;
 }
 
 iframe {
     width: 100%;
-    height: 400px;
+    height: 450px;
+    border: none;
+}
+
+/* DETAILS */
+.details {
     margin-top: 20px;
 }
 
-.error {
-    color: red;
+.details p {
+    margin: 8px 0;
+    font-size: 15px;
+}
+
+/* VERIFIED BADGE */
+.badge {
+    display: inline-block;
+    margin-top: 10px;
+    background: #28a745;
+    color: white;
+    padding: 6px 12px;
+    border-radius: 6px;
+    font-size: 14px;
 }
 </style>
+
 </head>
 
 <body>
 
-<div class="header">Certificate Verification Portal</div>
+<div class="header">
+    Certificate Verification
+</div>
 
 <div class="container">
-<div class="box">
 
-<h3>Verify Certificate</h3>
+<div class="card">
 
-<input type="text" id="certId" placeholder="Enter Certificate ID">
-<button onclick="verifyCert()">Verify</button>
+    <div class="title">
+        This is to certify that <strong>Lakshmi Kiran</strong> has successfully completed the course
+        <strong>Data Analytics MasterClass</strong>
+    </div>
 
-<p id="error" class="error"></p>
+    <!-- CERTIFICATE -->
+    <div class="cert-frame">
+        <iframe src="https://drive.google.com/file/d/1YrQ-r6Tn84b5AqzxfMehlXxFYJBsdK22/preview"></iframe>
+    </div>
 
-<div id="result"></div>
+    <!-- DETAILS -->
+    <div class="details">
+        <p><strong>Name:</strong> Lakshmi Kiran</p>
+        <p><strong>Course:</strong> Data Analytics MasterClass</p>
+        <p><strong>Issued By:</strong> NoviTech R&D Pvt Ltd</p>
+        <p><strong>Certificate ID:</strong> NT_8330AEE243</p>
+        <p><strong>Date Issued:</strong> March 2026</p>
+
+        <div class="badge">✔ Verified Certificate</div>
+    </div>
 
 </div>
+
 </div>
-
-<script>
-const firebaseConfig = {
-  apiKey: "YOUR_KEY",
-  authDomain: "YOUR_DOMAIN",
-  projectId: "YOUR_PROJECT_ID",
-};
-
-firebase.initializeApp(firebaseConfig);
-const db = firebase.firestore();
-
-async function verifyCert() {
-    const id = document.getElementById("certId").value;
-    const resultDiv = document.getElementById("result");
-    const error = document.getElementById("error");
-
-    resultDiv.innerHTML = "";
-    error.innerText = "";
-
-    try {
-        const doc = await db.collection("certificates").doc(id).get();
-
-        if (doc.exists) {
-            const data = doc.data();
-
-            resultDiv.innerHTML = `
-                <h4>Verified Certificate</h4>
-                <p><strong>Name:</strong> ${data.name}</p>
-                <p><strong>Course:</strong> ${data.course}</p>
-                <p><strong>Issuer:</strong> ${data.issuer}</p>
-                <p><strong>Status:</strong> ${data.status}</p>
-                <iframe src="${data.certificateUrl}"></iframe>
-            `;
-        } else {
-            error.innerText = "Invalid Certificate ID";
-        }
-
-    } catch (e) {
-        error.innerText = "Error verifying certificate";
-    }
-}
-</script>
 
 </body>
 </html>
