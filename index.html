@@ -22,11 +22,22 @@ body {
     border-bottom: 2px solid #eee;
 }
 
+.header-left {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
 /* LOGO */
 .logo-box {
     display: flex;
     align-items: center;
     gap: 10px;
+}
+
+.logo-img {
+    height: 50px;
+    width: auto;
 }
 
 .logo-text .brand {
@@ -40,13 +51,7 @@ body {
     color: #555;
 }
 
-/* HEADER TITLE */
-.header-left {
-    display: flex;
-    align-items: center;
-    gap: 20px;
-}
-
+/* TITLE */
 .header-title {
     font-size: 18px;
     font-weight: bold;
@@ -86,7 +91,7 @@ body {
     font-weight: bold;
 }
 
-/* TITLE */
+/* TITLE TEXT */
 .title {
     font-size: 20px;
     margin-bottom: 15px;
@@ -157,19 +162,10 @@ button:hover {
 <div class="header">
     <div class="header-left">
 
-        <!-- SVG LOGO -->
+        <!-- LOGO -->
         <div class="logo-box">
-            <svg width="45" height="45" viewBox="0 0 100 100">
-                <defs>
-                    <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="100%">
-                        <stop offset="0%" style="stop-color:#1e5aa5"/>
-                        <stop offset="100%" style="stop-color:#00c6ff"/>
-                    </linearGradient>
-                </defs>
-                <polygon points="50,5 95,50 50,95 5,50" fill="url(#grad1)"/>
-                <circle cx="50" cy="50" r="15" fill="white"/>
-            </svg>
-
+            <img src="logo.jpg" alt="NoviTech Logo" class="logo-img">
+            
             <div class="logo-text">
                 <span class="brand">NoviTech</span><br>
                 <span class="tagline">the innovation partner</span>
@@ -192,7 +188,7 @@ button:hover {
             <strong>Data Analytics MasterClass</strong>.
         </div>
 
-        <!-- CERTIFICATE -->
+        <!-- CERTIFICATE VIEW -->
         <div class="cert-frame">
             <iframe src="https://drive.google.com/file/d/1YrQ-r6Tn84b5AqzxfMehlXxFYJBsdK22/preview"></iframe>
         </div>
