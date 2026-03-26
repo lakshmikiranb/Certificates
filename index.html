@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -22,7 +23,7 @@ body {
 
 /* Container */
 .container {
-    max-width: 900px;
+    max-width: 1100px;
     margin: 30px auto;
     padding: 20px;
 }
@@ -47,7 +48,7 @@ body {
     margin-top: 15px;
 }
 
-/* Hidden sections */
+/* Sections */
 .section {
     display: none;
 }
@@ -56,11 +57,59 @@ body {
     display: block;
 }
 
+/* Certificate Layout */
+.cert-layout {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+/* LEFT SIDE */
+.cert-preview {
+    flex: 2;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.cert-preview h2 {
+    margin-bottom: 10px;
+}
+
+.cert-meta {
+    margin-top: 10px;
+    color: #555;
+}
+
+/* RIGHT SIDE */
+.cert-side {
+    flex: 1;
+    background: #0a3d62;
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.cert-side ul {
+    padding-left: 18px;
+}
+
+.cert-side li {
+    margin-bottom: 10px;
+}
+
+/* Explore button */
+.explore {
+    background: #1e90ff;
+}
+
+/* iframe */
 iframe {
     width: 100%;
-    height: 500px;
+    height: 450px;
     border: none;
-    margin-top: 20px;
+    margin-top: 15px;
     border-radius: 8px;
 }
 </style>
@@ -73,9 +122,8 @@ iframe {
     <p>IT Support Engineer | Certifications</p>
 </div>
 
-<!-- MAIN PAGE -->
+<!-- HOME PAGE -->
 <div id="home" class="container section active">
-
     <div class="card">
         <h2>Data Analytics MasterClass</h2>
         <p>Issued by NoviTech R&D Private Limited</p>
@@ -85,24 +133,47 @@ iframe {
             View Certificate
         </button>
     </div>
-
 </div>
 
 <!-- NOVITECH PAGE -->
 <div id="novitech" class="container section">
 
-    <div class="card">
-        <h2>Certificate Verification</h2>
-        <p><strong>Candidate:</strong> Lakshmi Kiran</p>
-        <p><strong>Organization:</strong> NoviTech R&D Private Limited</p>
-        <p><strong>Duration:</strong> 30 Days (Nov 27 – Dec 27, 2025)</p>
-        <p><strong>Credential ID:</strong> NT_B33DAEE243</p>
+    <div class="cert-layout">
 
-        <iframe src="https://drive.google.com/file/d/1YrQ-r6Tn84b5AqzxfMehlXxFYJBsdK22/preview"></iframe>
+        <!-- LEFT -->
+        <div class="cert-preview">
+            <h2>Course Certificate</h2>
+            <p>
+                This certificate verifies that <strong>Lakshmi Kiran</strong> 
+                has successfully completed the course 
+                <strong>Data Analytics MasterClass</strong>
+            </p>
 
-        <button class="btn" onclick="showPage('home')">
-            ← Back
-        </button>
+            <iframe src="https://drive.google.com/file/d/1YrQ-r6Tn84b5AqzxfMehlXxFYJBsdK22/preview"></iframe>
+
+            <p class="cert-meta">
+                <strong>Credential ID:</strong> NT_B33DAEE243 <br>
+                <strong>Duration:</strong> 30 Days (Nov 27 – Dec 27, 2025)
+            </p>
+
+            <button class="btn" onclick="showPage('home')">← Back</button>
+        </div>
+
+        <!-- RIGHT -->
+        <div class="cert-side">
+            <h3>Learn today’s most in-demand skills</h3>
+            <ul>
+                <li>📊 Data Analytics</li>
+                <li>🔐 Cyber Security</li>
+                <li>📈 Digital Marketing</li>
+                <li>💻 IT Support</li>
+            </ul>
+
+            <p>Upgrade your career with industry-ready skills.</p>
+
+            <button class="btn explore">Explore More</button>
+        </div>
+
     </div>
 
 </div>
@@ -118,3 +189,4 @@ function showPage(page) {
 
 </body>
 </html>
+```
