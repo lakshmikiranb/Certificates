@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Certificate Details</title>
+<title>NoviTech Certificate</title>
 
 <style>
 body {
@@ -14,12 +14,24 @@ body {
 
 /* HEADER */
 .header {
-    background: #0b3c49;
-    color: white;
-    padding: 20px;
-    text-align: center;
-    font-size: 22px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    background: #ffffff;
+    padding: 12px 25px;
+    border-bottom: 2px solid #eee;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.logo {
+    height: 50px;
+}
+
+/* TITLE */
+.header-title {
+    font-size: 20px;
     font-weight: bold;
+    color: #0b3c49;
 }
 
 /* CONTAINER */
@@ -37,10 +49,11 @@ body {
     box-shadow: 0 5px 15px rgba(0,0,0,0.1);
 }
 
-/* TITLE */
+/* TITLE TEXT */
 .title {
     font-size: 20px;
     margin-bottom: 15px;
+    line-height: 1.6;
 }
 
 /* CERT FRAME */
@@ -66,15 +79,30 @@ iframe {
     font-size: 15px;
 }
 
-/* VERIFIED BADGE */
+/* BADGE */
 .badge {
     display: inline-block;
     margin-top: 10px;
     background: #28a745;
     color: white;
-    padding: 6px 12px;
+    padding: 6px 14px;
     border-radius: 6px;
     font-size: 14px;
+}
+
+/* FOOTER */
+.footer {
+    text-align: center;
+    margin-top: 30px;
+    color: #777;
+    font-size: 14px;
+}
+
+/* MOBILE FIX */
+@media(max-width: 768px) {
+    iframe {
+        height: 300px;
+    }
 }
 </style>
 
@@ -82,36 +110,45 @@ iframe {
 
 <body>
 
+<!-- HEADER -->
 <div class="header">
-    Certificate Verification
+
+    <!-- NOVITECH LOGO (WORKING URL) -->
+    <img class="logo" src="https://i.imgur.com/6X4Qp6F.png" alt="NoviTech Logo">
+
+    <div class="header-title">Certificate Verification</div>
 </div>
 
 <div class="container">
 
-<div class="card">
+    <div class="card">
 
-    <div class="title">
-        This is to certify that <strong>Lakshmi Kiran</strong> has successfully completed the course
-        <strong>Data Analytics MasterClass</strong>
+        <div class="title">
+            This is to certify that <strong>Lakshmi Kiran</strong> has successfully completed the course 
+            <strong>Data Analytics MasterClass</strong>.
+        </div>
+
+        <!-- CERTIFICATE -->
+        <div class="cert-frame">
+            <iframe src="https://drive.google.com/file/d/1YrQ-r6Tn84b5AqzxfMehlXxFYJBsdK22/preview"></iframe>
+        </div>
+
+        <!-- DETAILS -->
+        <div class="details">
+            <p><strong>Name:</strong> Lakshmi Kiran</p>
+            <p><strong>Course:</strong> Data Analytics MasterClass</p>
+            <p><strong>Issued By:</strong> NoviTech R&D Pvt Ltd</p>
+            <p><strong>Certificate ID:</strong> NT_8330AEE243</p>
+            <p><strong>Date Issued:</strong> March 2026</p>
+
+            <div class="badge">✔ Verified Certificate</div>
+        </div>
+
     </div>
 
-    <!-- CERTIFICATE -->
-    <div class="cert-frame">
-        <iframe src="https://drive.google.com/file/d/1YrQ-r6Tn84b5AqzxfMehlXxFYJBsdK22/preview"></iframe>
+    <div class="footer">
+        © 2026 NoviTech R&D Pvt Ltd
     </div>
-
-    <!-- DETAILS -->
-    <div class="details">
-        <p><strong>Name:</strong> Lakshmi Kiran</p>
-        <p><strong>Course:</strong> Data Analytics MasterClass</p>
-        <p><strong>Issued By:</strong> NoviTech R&D Pvt Ltd</p>
-        <p><strong>Certificate ID:</strong> NT_8330AEE243</p>
-        <p><strong>Date Issued:</strong> March 2026</p>
-
-        <div class="badge">✔ Verified Certificate</div>
-    </div>
-
-</div>
 
 </div>
 
