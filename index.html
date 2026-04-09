@@ -12,7 +12,7 @@ body {
     background: #eef2f7;
 }
 
-/* HEADER - ONLY LOGO */
+/* HEADER */
 .header {
     background: #fff;
     padding: 15px;
@@ -22,7 +22,6 @@ body {
 
 .logo-img {
     height: 60px;
-    width: auto;
 }
 
 /* MAIN */
@@ -41,6 +40,15 @@ body {
     position: relative;
 }
 
+/* VERIFIED BADGE */
+.verified {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    color: green;
+    font-weight: bold;
+}
+
 /* WATERMARK */
 .card::before {
     content: "NOVITECH";
@@ -48,8 +56,8 @@ body {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%) rotate(-30deg);
-    font-size: 70px;
-    color: rgba(0,0,0,0.05);
+    font-size: 90px;
+    color: rgba(0,0,0,0.08);
     font-weight: bold;
 }
 
@@ -74,7 +82,7 @@ iframe {
 
 /* BUTTON */
 button {
-    margin-top: 15px;
+    margin-top: 10px;
     padding: 10px 15px;
     background: #1e5aa5;
     color: white;
@@ -113,9 +121,14 @@ button:hover {
     iframe {
         height: 300px;
     }
+    .card {
+        padding: 15px;
+    }
+    .title {
+        font-size: 16px;
+    }
 }
 </style>
-
 </head>
 
 <body>
@@ -130,8 +143,11 @@ button:hover {
 
     <div class="card">
 
+        <div class="verified">✔ Verified</div>
+
+        <!-- TITLE -->
         <div class="title">
-            This certifies that <strong>Lakshmi Kiran</strong> has successfully completed 
+            This is to certify that <strong>Lakshmi Kiran</strong> has successfully completed the 
             <strong>Data Analytics MasterClass</strong>.
         </div>
 
@@ -141,13 +157,20 @@ button:hover {
         </div>
 
         <!-- DOWNLOAD -->
-        <button onclick="downloadCert()">Download Certificate</button>
+        <a href="https://drive.google.com/uc?export=download&id=1YrQ-r6Tn84b5AqzxfMehlXxFYJBsdK22" download>
+            <button>Download Certificate</button>
+        </a>
 
         <!-- DETAILS -->
         <div class="details">
             <p><strong>Name:</strong> Lakshmi Kiran</p>
             <p><strong>Course:</strong> Data Analytics MasterClass</p>
-            <p><strong>Certificate ID:</strong> NT_8330AEE243</p>
+            <p><strong>Certificate ID:</strong> 
+                <span style="color:#1e5aa5; font-weight:bold;">NT_8330AEE243</span>
+            </p>
+
+            <button onclick="copyID()">Copy Certificate ID</button>
+
             <p><strong>Issued By:</strong> NoviTech R&D Pvt Ltd</p>
             <p><strong>Date:</strong> March 2026</p>
         </div>
@@ -167,8 +190,18 @@ button:hover {
 </div>
 
 <script>
-function downloadCert() {
-    window.open("https://drive.google.com/uc?export=download&id=1YrQ-r6Tn84b5AqzxfMehlXxFYJBsdK22");
+function copyID() {
+    navigator.clipboard.writeText("NT_8330AEE243");
+    alert("Certificate ID copied!");
+}
+
+/* BASIC VERIFICATION SECURITY */
+const validID = "NT_8330AEE243";
+const urlParams = new URLSearchParams(window.location.search);
+const id = urlParams.get('id');
+
+if(id && id !== validID){
+    document.body.innerHTML = "<h2 style='text-align:center;color:red;'>Invalid Certificate</h2>";
 }
 </script>
 
