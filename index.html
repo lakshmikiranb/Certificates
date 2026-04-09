@@ -9,7 +9,7 @@
 body {
     margin: 0;
     font-family: "Segoe UI", Arial, sans-serif;
-    background: #f4f6f9;
+    background: #eef2f7;
 }
 
 /* HEADER */
@@ -18,59 +18,52 @@ body {
     color: white;
     padding: 15px 30px;
     display: flex;
-    align-items: center;
     justify-content: space-between;
+    align-items: center;
 }
 
-.logo {
+.header-left {
     display: flex;
     align-items: center;
 }
 
-.logo img {
+.header-left img {
     height: 45px;
     margin-right: 10px;
 }
 
-.company-name {
+.company {
     font-size: 20px;
     font-weight: bold;
 }
 
 .header-right {
-    font-size: 14px;
+    font-size: 13px;
+    opacity: 0.9;
 }
 
-/* CONTAINER */
+/* MAIN */
 .container {
-    max-width: 900px;
+    max-width: 950px;
     margin: 40px auto;
-    padding: 20px;
+    padding: 15px;
 }
 
 /* CARD */
 .card {
-    background: #fff;
+    background: white;
     border-radius: 10px;
-    box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
     overflow: hidden;
 }
 
-/* TOP BAR */
-.card-header {
-    background: #e9f1ff;
-    padding: 15px 20px;
-    border-left: 5px solid #0b3d91;
-    font-weight: bold;
-    color: #0b3d91;
-}
-
-/* STATUS */
+/* STATUS BAR */
 .status {
-    padding: 15px 20px;
-    background: #e6f9ec;
+    background: #e6f4ea;
     color: #1e7e34;
+    padding: 12px 20px;
     font-weight: bold;
+    border-left: 5px solid #28a745;
 }
 
 /* TITLE */
@@ -79,53 +72,29 @@ body {
     font-size: 18px;
 }
 
-/* CERTIFICATE */
-.cert-frame {
-    margin: 0 20px;
-    border: 2px solid #ddd;
+/* CERTIFICATE DISPLAY */
+.cert-box {
+    margin: 0 20px 20px;
+    border: 3px solid #0b3d91;
     border-radius: 8px;
     overflow: hidden;
+    background: #000;
 }
 
-iframe {
+.cert-box iframe {
     width: 100%;
-    height: 420px;
+    height: 450px;
     border: none;
 }
 
-/* DETAILS */
-.details {
-    padding: 20px;
-    border-top: 1px solid #eee;
-}
-
-.details p {
-    margin: 8px 0;
-}
-
-.label {
-    font-weight: bold;
-    color: #555;
-}
-
-.value {
-    color: #111;
-}
-
-/* CERT ID */
-.cert-id {
-    color: #0b3d91;
-    font-weight: bold;
-}
-
-/* BUTTONS */
+/* ACTIONS */
 .actions {
-    padding: 20px;
     text-align: center;
+    margin-bottom: 20px;
 }
 
 button {
-    padding: 10px 18px;
+    padding: 10px 16px;
     margin: 5px;
     border: none;
     border-radius: 5px;
@@ -140,6 +109,26 @@ button {
 .copy {
     background: #6c757d;
     color: white;
+}
+
+/* DETAILS */
+.details {
+    border-top: 1px solid #eee;
+    padding: 20px;
+}
+
+.details p {
+    margin: 8px 0;
+}
+
+.label {
+    font-weight: bold;
+    color: #555;
+}
+
+.cert-id {
+    color: #0b3d91;
+    font-weight: bold;
 }
 
 /* QR */
@@ -158,7 +147,7 @@ button {
 
 /* MOBILE */
 @media(max-width: 768px) {
-    iframe {
+    .cert-box iframe {
         height: 280px;
     }
 }
@@ -169,11 +158,11 @@ button {
 
 <!-- HEADER -->
 <div class="header">
-    <div class="logo">
+    <div class="header-left">
         <img src="logo.jpg">
-        <div class="company-name">NoviTech R&D Pvt Ltd</div>
+        <div class="company">NoviTech R&D Pvt Ltd</div>
     </div>
-    <div class="header-right">Official Certificate Verification Portal</div>
+    <div class="header-right">Certificate Verification Portal</div>
 </div>
 
 <!-- MAIN -->
@@ -181,23 +170,23 @@ button {
 
     <div class="card">
 
-        <div class="card-header">
-            Certificate Verification Result
-        </div>
-
+        <!-- STATUS -->
         <div class="status">
-            ✔ This is a Valid & Verified Certificate
+            ✔ Verified Certificate — Authentic & Issued by NoviTech
         </div>
 
+        <!-- TITLE -->
         <div class="title">
             This certificate verifies that <strong>Lakshmi Kiran</strong> has successfully completed the 
             <strong>Data Analytics MasterClass</strong>.
         </div>
 
-        <div class="cert-frame">
+        <!-- CERTIFICATE -->
+        <div class="cert-box">
             <iframe src="https://drive.google.com/file/d/1YrQ-r6Tn84b5AqzxfMehlXxFYJBsdK22/preview"></iframe>
         </div>
 
+        <!-- BUTTONS -->
         <div class="actions">
             <a href="https://drive.google.com/uc?export=download&id=1YrQ-r6Tn84b5AqzxfMehlXxFYJBsdK22">
                 <button class="download">Download Certificate</button>
@@ -205,14 +194,18 @@ button {
             <button class="copy" onclick="copyID()">Copy Certificate ID</button>
         </div>
 
+        <!-- DETAILS -->
         <div class="details">
-            <p><span class="label">Name:</span> <span class="value">Lakshmi Kiran</span></p>
-            <p><span class="label">Course:</span> <span class="value">Data Analytics MasterClass</span></p>
-            <p><span class="label">Certificate ID:</span> <span class="cert-id">NT_8330AEE243</span></p>
-            <p><span class="label">Issued By:</span> <span class="value">NoviTech R&D Pvt Ltd</span></p>
-            <p><span class="label">Issue Date:</span> <span class="value">March 2026</span></p>
+            <p><span class="label">Name:</span> Lakshmi Kiran</p>
+            <p><span class="label">Course:</span> Data Analytics MasterClass</p>
+            <p><span class="label">Certificate ID:</span> 
+                <span class="cert-id">NT_8330AEE243</span>
+            </p>
+            <p><span class="label">Issued By:</span> NoviTech R&D Pvt Ltd</p>
+            <p><span class="label">Issue Date:</span> March 2026</p>
         </div>
 
+        <!-- QR -->
         <div class="qr">
             <p><strong>Scan to Verify</strong></p>
             <img src="https://api.qrserver.com/v1/create-qr-code/?size=120x120&data=https://lakshmikiranb.github.io/Certificates/?id=NT_8330AEE243">
@@ -221,7 +214,7 @@ button {
     </div>
 
     <div class="footer">
-        © 2026 NoviTech R&D Pvt Ltd | All Rights Reserved
+        © 2026 NoviTech R&D Pvt Ltd | Official Verification System
     </div>
 
 </div>
@@ -229,7 +222,7 @@ button {
 <script>
 function copyID() {
     navigator.clipboard.writeText("NT_8330AEE243");
-    alert("Copied!");
+    alert("Certificate ID copied");
 }
 
 /* VALIDATION */
